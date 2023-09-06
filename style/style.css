@@ -1,0 +1,328 @@
+@font-face {
+    font-family: 'Pet';
+    src: url('./fonts/PawWowBlock-VGMDl.otf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* body {
+    background-color: black;
+} */
+
+li {
+    list-style: none;
+    /* position: fixed;
+    background: rgba(0, 0, 0, 0.6);
+    transition: top .6s; */
+}
+
+a {
+    text-decoration: none;
+    /* color: #fff; */
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: relative;
+}
+
+a:hover {
+    color: orange;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    background-color: orange;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+a:hover:after {
+    width: 100%;
+}
+
+/* Header */
+header {
+    position: relative;
+    padding: 0 2rem;
+    z-index: 2;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar 
+.links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar 
+.toggle_btn {
+    color: black;
+    /* color: #fff; */
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn {
+    background-color: orange;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action_btn:hover {
+    scale: 1.05;
+    color: #fff;
+}
+
+.action_btn:active {
+    scale: 0.95;
+}
+
+/* DROPDOWN MENU */
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 300px;
+}
+
+.dropdown_menu 
+li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu 
+.action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Responsive Navbar*/
+
+@media (max-width: 992px) {
+    .navbar
+    .links,
+    .navbar
+    .action_btn {
+        display: none;
+    }
+
+    .navbar
+    .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
+    }
+}
+
+/* Carousel */
+
+.carousel {
+    margin-top: -80px;
+}
+  
+.carousel-inner 
+.carousel-item img {
+    height: 100vh;
+}
+  
+.carousel-indicators {
+    visibility: hidden;
+}
+  
+.carousel-control-prev, 
+.carousel-control-next {
+    visibility: hidden;
+}
+
+/* About Section */
+
+#about-us {
+    text-align: center;
+    overflow: hidden;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.about 
+img {
+    transition: .5s ease;
+    border-radius: 20px;
+}
+
+.about:hover 
+img {
+    transform: scale(1.1);
+}
+
+.desc
+p {
+    line-height: 2;
+    margin-top: 20px;
+}
+
+/* Mission and Vision */
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+}
+
+.container 
+.card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 350px;
+    height: 300px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+    transition: 0.5s;
+}
+
+.container
+.card:hover {
+    height: 400px;
+}
+
+.container
+.card
+.imgBox {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    width: 300px;
+    height: 220px;
+    background: #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.container
+.card:hover
+.imgBox {
+    top: -100px;
+    scale: 0.75;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.container
+.card
+.imgBox 
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container
+.card
+.content {
+    position: absolute;
+    top: 252px;
+    width: 100%;
+    padding: 0 30px;
+    height: 35px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.container
+.card:hover
+.content {
+    top: 130px;
+    height: 250px;
+}
+
+.one 
+h2 {
+    color: #009688;
+    font-weight: bold;
+}
+
+.two 
+h2 {
+    color: #ff3e7f;
+    font-weight: bold;
+}
+
+.three
+h2 {
+    color: #03a9f4;
+    font-weight: bold;
+}
+
+.title 
+h1 {
+    text-transform: uppercase;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'Pet';
+}
+
