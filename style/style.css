@@ -8,169 +8,82 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+    position: relative;
 }
 
-/* body {
-    background-color: black;
-} */
+/* ================================
+        N   a   v   b   a   r 
+=================================== */
 
-li {
-    list-style: none;
-    /* position: fixed;
-    background: rgba(0, 0, 0, 0.6);
-    transition: top .6s; */
+.navbar-brand {
+    width: 180px;
+    overflow: hidden;
 }
 
+.navbar-brand
+span {
+    transition: 0.5s;
+    font-family:'Courier New', Courier, monospace;
+    display: block;
+}
+
+.navbar-brand
+span:nth-child(1) {
+    position: absolute;
+    transform: translateY(-80px);
+}
+
+.icon
+.navbar-brand
+span:nth-child(1) {
+    transform: translateY(10px);
+}
+
+.icon
+.navbar-brand
+span:nth-child(2) {
+    transform: translateY(80px);
+}
+
+.navbar
+.container-fluid
 a {
-    text-decoration: none;
-    /* color: #fff; */
-    color: black;
-    font-size: 1.5rem;
+    font-size: 18px;
     font-weight: bold;
     position: relative;
 }
 
-a:hover {
-    color: orange;
-}
-
+.navbar 
+.container-fluid 
 a::after {
     content: "";
     position: absolute;
-    background-color: orange;
+    background-color: maroon;
     height: 3px;
     width: 0;
     left: 0;
-    bottom: -10px;
+    bottom: 4px;
     transition: 0.3s;
 }
 
+
+.navbar 
+.container-fluid 
 a:hover:after {
     width: 100%;
 }
 
-/* Header */
-header {
-    position: relative;
-    padding: 0 2rem;
-    z-index: 2;
-}
-
-.navbar {
-    width: 100%;
-    height: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .navbar 
-.links {
-    display: flex;
-    gap: 2rem;
+.container-fluid
+.nav-item 
+a:hover {
+    color: red !important;
 }
 
-.navbar 
-.toggle_btn {
-    color: black;
-    /* color: #fff; */
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none;
-}
+/* =====================================================
+            C   a   r   o   u   s   e   l 
+======================================================= */
 
-.action_btn {
-    background-color: orange;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border: none;
-    outline: none;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: scale 0.2 ease;
-}
-
-.action_btn:hover {
-    scale: 1.05;
-    color: #fff;
-}
-
-.action_btn:active {
-    scale: 0.95;
-}
-
-/* DROPDOWN MENU */
-.dropdown_menu {
-    display: none;
-    position: absolute;
-    right: 2rem;
-    top: 60px;
-    height: 0;
-    width: 300px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.dropdown_menu.open {
-    height: 300px;
-}
-
-.dropdown_menu 
-li {
-    padding: 0.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.dropdown_menu 
-.action_btn {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-
-/* Responsive Navbar*/
-
-@media (max-width: 992px) {
-    .navbar
-    .links,
-    .navbar
-    .action_btn {
-        display: none;
-    }
-
-    .navbar
-    .toggle_btn {
-        display: block;
-    }
-
-    .dropdown_menu {
-        display: block;
-    }
-}
-
-@media (max-width: 576px) {
-    .dropdown_menu {
-        left: 2rem;
-        width: unset;
-    }
-}
-
-/* Carousel */
-
-.carousel {
-    margin-top: -80px;
-}
-  
 .carousel-inner 
 .carousel-item img {
     height: 100vh;
@@ -185,9 +98,11 @@ li {
     visibility: hidden;
 }
 
-/* About Section */
+/* ==========================================================
+            A   b   o   u   t  
+============================================================= */
 
-#about-us {
+#about {
     text-align: center;
     overflow: hidden;
 }
@@ -216,7 +131,9 @@ p {
     margin-top: 20px;
 }
 
-/* Mission and Vision */
+/* ========================================================= 
+                Mission and Vision 
+========================================================= */
 
 .container {
     position: relative;
@@ -324,5 +241,74 @@ h1 {
     font-size: 60px;
     font-weight: bold;
     font-family: 'Pet';
+    text-align: center;
 }
 
+/* ========================================
+            Meet Our Pet
+=========================================== */
+
+.pets {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.pets
+.card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pets
+.card
+.pet-image,
+.pets
+.card
+.label {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.pets
+.card
+.pet-image {
+    background: #fff;
+    height: 120px;
+    z-index: 1;
+    transform-origin: bottom;
+}
+
+.pets
+.card:hover
+.pet-image {
+    transform: translateY(-100%) rotateX(90deg);
+}
+
+.pets
+.card
+.label {
+    height: 280px;
+    background: var(--clr);
+    border-top: 8px solid #333;
+    transform-origin: top;
+}
+
+.pets
+.card:hover
+.label {
+    transform: translateY(100%) rotateX(90deg);
+}

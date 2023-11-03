@@ -1,19 +1,14 @@
-// FOR DROPDOWN MENU
+let lastScrollTop = 0;
+const navbar = document.getElementById("navbar");
 
-const toggleBtn = document.querySelector('.toggle_btn');
-const toggleBtnIcon = document.querySelector('.toggle_btn i');
-const dropDownMenu = document.querySelector('.dropdown_menu');
+window.addEventListener("scroll", function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-toggleBtn.addEventListener('click', function () {
-    dropDownMenu.classList.toggle('open');
-    const isOpen = dropDownMenu.classList.contains('open');
+    if (scrollTop > lastScrollTop) {
+        navbar.classList.remove('icon');
+    } else {
+        navbar.classList.add('icon');
+    }
 
-    toggleBtnIcon.className = isOpen
-        ? 'fa fa-xmark'
-        : 'fa fa-bars';
+    lastScrollTop = scrollTop;
 });
-
-// End for Dropdown
-
-
-
